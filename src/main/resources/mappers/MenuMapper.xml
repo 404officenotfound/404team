@@ -18,7 +18,30 @@
         <result property="refCategoryCode" column="ref_category_code"/>
     </resultMap>
 
+    <select id="findAllMenu" resultMap="menuResultMap">
+        SELECT
+        menu_code,
+        menu_name,
+        menu_price,
+        category_code,
+        orderable_status
+        FROM
+        tbl_menu
+        WHERE
+        orderable_status = 'Y'
+        ORDER BY
+        menu_code
+    </select>
 
+    <select id="findMenuByCode" parameterType="int" resultMap="menuResultMap">
+        SELECT
+        menu_code,
+      
+        FROM
+        tbl_menu
+        WHERE
+        menu_code = #{code}
+    </select>
 
     <insert id="registNewMenu" parameterType="com.ohgiraffers.crud.menu.model.dto.MenuDTO"
             useGeneratedKeys="true" keyProperty="code">
@@ -29,6 +52,7 @@
         menu_price,
         category_code,
         orderable_status
+
         )
         VALUES
         (
@@ -38,5 +62,7 @@
         #{orderableStatus}
         )
     </insert>
+
+
 
 </mapper>

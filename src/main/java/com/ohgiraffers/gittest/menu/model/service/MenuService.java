@@ -20,6 +20,14 @@ public class MenuService {
         this.menuMapper = menuMapper;
     }
 
+    public List<MenuDTO> findAllMenu() {
+        return menuMapper.findAllMenu();
+    }
+
+    public List<CategoryDTO> findAllCategory() {
+        return menuMapper.findAllCategory();
+    }
+
 
     public List<CategoryDTO> findAllCategory() {
     }
@@ -27,5 +35,9 @@ public class MenuService {
     @Transactional
     public void registNewMenu(MenuDTO newMenu) {
         menuMapper.registNewMenu(newMenu);
+
+    public MenuDTO findMenuByCode(int code) {
+        return menuMapper.findMenuByCode(code);
+
     }
 }
