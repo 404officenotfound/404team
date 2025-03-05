@@ -18,6 +18,14 @@
         <result property="refCategoryCode" column="ref_category_code"/>
     </resultMap>
 
+    <delete id="deleteMenu" parameterType="int">
+        DELETE
+        FROM
+        tbl_menu
+        WHERE
+        menu_code = #{code}
+    </delete>
+
 
     
 
