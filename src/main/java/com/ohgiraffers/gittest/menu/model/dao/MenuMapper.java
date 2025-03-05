@@ -10,4 +10,8 @@ import java.util.List;
 public interface MenuMapper {
 
 
+
+    void updateMenu(MenuDTO menu);
+
+
 }
