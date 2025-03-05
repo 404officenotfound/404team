@@ -16,12 +16,34 @@ public class MenuService {
 
     @Autowired
     public MenuService(MenuMapper menuMapper) {
-
         this.menuMapper = menuMapper;
     }
+
+    public List<MenuDTO> findAllMenu() {
+        return menuMapper.findAllMenu();
+    }
+
+    public List<CategoryDTO> findAllCategory() {
+        return menuMapper.findAllCategory();
+    }
+
+    @Transactional
+    public void registNewMenu(MenuDTO newMenu) {
+        menuMapper.registNewMenu(newMenu);
+    }
+
+    public MenuDTO findMenuByCode(int code) {
+        return menuMapper.findMenuByCode(code);
+    }
+
+    @Transactional
+    public void updateMenu(MenuDTO menu) {
+        menuMapper.updateMenu(menu);
+    }
+
     @Transactional
     public void deleteMenu(int code) {
         menuMapper.deleteMenu(code);
     }
-
 }
+
