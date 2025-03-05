@@ -19,5 +19,12 @@ public class MenuService {
         this.menuMapper = menuMapper;
     }
 
+    public List<MenuDTO> findAllMenu() {
+        return menuMapper.findAllMenu();
+    }
+
+    public List<CategoryDTO> findAllCategory() {
+        return menuMapper.findAllCategory();
+    }
 
 }

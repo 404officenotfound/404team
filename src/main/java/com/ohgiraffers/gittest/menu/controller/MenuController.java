@@ -30,5 +30,15 @@ public class MenuController {
 
     }
 
+    @GetMapping("/list")
+    public String findMenuList(Model model) {
+
+        List<MenuDTO> menuList = menuService.findAllMenu();
+
+        model.addAttribute("menuList", menuList);
+
+        return "menu/list";
+    }
+
 
 }
