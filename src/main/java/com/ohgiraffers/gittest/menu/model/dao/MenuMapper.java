@@ -9,5 +9,10 @@ import java.util.List;
 @Mapper
 public interface MenuMapper {
 
+    List<MenuDTO> findAllMenu();
+
+    List<CategoryDTO> findAllCategory();
+
+    MenuDTO findMenuByCode(int code);
 
 }
