@@ -20,4 +20,23 @@
 
 
 
+    <insert id="registNewMenu" parameterType="com.ohgiraffers.crud.menu.model.dto.MenuDTO"
+            useGeneratedKeys="true" keyProperty="code">
+        INSERT INTO
+        tbl_menu
+        (
+        menu_name,
+        menu_price,
+        category_code,
+        orderable_status
+        )
+        VALUES
+        (
+        #{name},
+        #{price},
+        #{categoryCode},
+        #{orderableStatus}
+        )
+    </insert>
+
 </mapper>
