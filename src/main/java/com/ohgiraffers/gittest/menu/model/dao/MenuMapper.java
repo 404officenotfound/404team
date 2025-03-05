@@ -9,5 +9,6 @@ import java.util.List;
 @Mapper
 public interface MenuMapper {
 
+    void deleteMenu(int code);
 
 }

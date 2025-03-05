@@ -9,6 +9,7 @@ import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
@@ -28,6 +29,16 @@ public class MenuController {
         this.menuService = menuService;
         this.messageSource = messageSource;
 
+    }
+    @PostMapping("/delete/{code}")
+    public String deleteMenu(@PathVariable("code") int code,
+                             RedirectAttributes rAttr) {
+
+        menuService.deleteMenu(code);
+
+        rAttr.addFlashAttribute("successMessage", "메뉴가 성공적으로 삭제되었습니다.");
+
+        return "redirect:/menu/list";
     }
 
 
