@@ -18,6 +18,9 @@
         <result property="refCategoryCode" column="ref_category_code"/>
     </resultMap>
 
+
+    
+
     <select id="findAllMenu" resultMap="menuResultMap">
         SELECT
         menu_code,
@@ -62,6 +65,18 @@
         #{orderableStatus}
         )
     </insert>
+
+    <update id="updateMenu" parameterType="com.ohgiraffers.crud.menu.model.dto.MenuDTO">
+        UPDATE tbl_menu
+        SET
+        menu_name = #{name},
+        menu_price = #{price},
+        category_code = #{categoryCode},
+        orderable_status = #{orderableStatus}
+        WHERE
+        menu_code = #{code}
+    </update>
+
 
 
 

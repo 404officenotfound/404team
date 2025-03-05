@@ -87,5 +87,17 @@ public class MenuController {
         return "redirect:/menu/list";
     }
 
-      
+
+    @PostMapping("/update")
+    public String updateMenu(MenuDTO menu, RedirectAttributes rAttr) {
+
+        menuService.updateMenu(menu);
+
+        rAttr.addFlashAttribute("successMessage", "메뉴가 성공적으로 수정되었습니다.");
+
+        return "redirect:/menu/detail/" + menu.getCode();
+    }
+
+
+
 }

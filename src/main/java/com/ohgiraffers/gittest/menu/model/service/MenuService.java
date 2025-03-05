@@ -29,15 +29,25 @@ public class MenuService {
     }
 
 
+
+   
+
+
+
     public List<CategoryDTO> findAllCategory() {
     }
 
     @Transactional
     public void registNewMenu(MenuDTO newMenu) {
         menuMapper.registNewMenu(newMenu);
-
+    }
     public MenuDTO findMenuByCode(int code) {
         return menuMapper.findMenuByCode(code);
 
     }
+   @Transactional
+    public void updateMenu(MenuDTO menu) {
+        menuMapper.updateMenu(menu);
+    }
+
 }
