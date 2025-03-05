@@ -33,6 +33,7 @@
         menu_code
     </select>
 
+
     <select id="findMenuByCode" parameterType="int" resultMap="menuResultMap">
         SELECT
         menu_code,
@@ -45,6 +46,5 @@
         WHERE
         menu_code = #{code}
     </select>
-
 
 </mapper>

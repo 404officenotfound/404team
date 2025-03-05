@@ -30,5 +30,4 @@ public class MenuService {
     public MenuDTO findMenuByCode(int code) {
         return menuMapper.findMenuByCode(code);
     }
-
 }

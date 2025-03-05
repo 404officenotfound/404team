@@ -29,7 +29,6 @@ public class MenuController {
         this.messageSource = messageSource;
 
     }
-
     @GetMapping("/detail/{code}")
     public String findMenuDetail(@PathVariable("code") int code,
                                  Model model) {
@@ -50,7 +49,14 @@ public class MenuController {
         model.addAttribute("menu", menu);
 
         return "menu/edit";
+
+    @GetMapping("/list")
+    public String findMenuList(Model model) {
+
+        List<MenuDTO> menuList = menuService.findAllMenu();
+
+        model.addAttribute("menuList", menuList);
+
+        return "menu/list";
     }
-
-
 }
