@@ -27,4 +27,7 @@ public class MenuService {
         return menuMapper.findAllCategory();
     }
 
+    public MenuDTO findMenuByCode(int code) {
+        return menuMapper.findMenuByCode(code);
+    }
 }
