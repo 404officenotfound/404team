@@ -11,7 +11,10 @@ public interface MenuMapper {
 
     List<MenuDTO> findAllMenu();
 
+    void registNewMenu(MenuDTO newMenu);
+
     List<CategoryDTO> findAllCategory();
 
     MenuDTO findMenuByCode(int code);
+
 }
